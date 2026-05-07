@@ -149,7 +149,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(180deg, rgba(23, 23, 35, 0.0) 0%, rgba(61, 61, 90, 0.92) 100%), url(/imagens/angelo.jpeg);
+  background: linear-gradient(180deg, rgba(23, 23, 35, 0.0) 0%, rgba(61, 61, 90, 0.92) 100%), url(/My-portfolio/imagens/angelo.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

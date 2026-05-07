@@ -1,8 +1,9 @@
-'use client'
-import Image from "next/image";
+'use client';
+
 import "./globals.css";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const basePath = "/My-portfolio";
 
 const projects = [
   {
@@ -10,7 +11,7 @@ const projects = [
     slug: 'electricalEngineer',
     description:
       'A short and clear project description, highlighting the problem solved and the final result.',
-    image: '/imagens/electricalEngineer.png',
+    image: `${basePath}/imagens/electricalEngineer.png`,
     tags: ['React', 'CSS', 'UI'],
   },
   {
@@ -18,7 +19,7 @@ const projects = [
     slug: 'ayrtonSennaTribute',
     description:
       'Another project focused on performance, usability and a modern visual experience.',
-    image: '/imagens/senna.png',
+    image: `${basePath}/imagens/senna.png`,
     tags: ['Frontend', 'Responsive', 'UX'],
   },
   {
@@ -26,7 +27,7 @@ const projects = [
     slug: 'fireboyAndWatergirl',
     description:
       'A personal or freelance case with a clean interface and strong presentation.',
-    image: '/imagens/game.jpg',
+    image: `${basePath}/imagens/game.jpg`,
     tags: ['Landing Page', 'Design', 'Web'],
   },
   {
@@ -34,19 +35,23 @@ const projects = [
     slug: 'wildWestGame',
     description:
       'A short and clear project description, highlighting the problem solved and the final result.',
-    image: '/imagens/wildWestGame.png',
+    image: `${basePath}/imagens/wildWestGame.png`,
     tags: ['React', 'CSS', 'UI'],
   },
   {
     title: 'Project Five',
+    slug: 'project-five',
     description:
       'Another project focused on performance, usability and a modern visual experience.',
+    image: `${basePath}/imagens/electricalEngineer.png`,
     tags: ['Frontend', 'Responsive', 'UX'],
   },
   {
     title: 'Project Six',
+    slug: 'project-six',
     description:
       'A personal or freelance case with a clean interface and strong presentation.',
+    image: `${basePath}/imagens/senna.png`,
     tags: ['Landing Page', 'Design', 'Web'],
   },
 ];
@@ -58,19 +63,15 @@ export default function PortfolioLayout() {
   const maxIndex = Math.max(projects.length - visibleCards, 0);
 
   const handleNext = () => {
-    if (currentIndex < maxIndex) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
+    setCurrentIndex((prevIndex) =>
+      prevIndex < maxIndex ? prevIndex + 1 : 0
+    );
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(maxIndex);
-    }
+    setCurrentIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : maxIndex
+    );
   };
 
   return (
@@ -81,7 +82,7 @@ export default function PortfolioLayout() {
 
           <nav className="nav">
             <a href="#sobre">About</a>
-            <a href="/projects">Projects</a>
+            <a href={`${basePath}/projects`}>Projects</a>
             <a href="#contato">Contact</a>
           </nav>
         </div>
@@ -117,7 +118,6 @@ export default function PortfolioLayout() {
             <div className="status-card">
               <div>
                 <p className="card-label">Available for freelance</p>
-
                 <span className="status-dot"></span>
               </div>
 
@@ -150,21 +150,17 @@ export default function PortfolioLayout() {
             <h2>Some featured work</h2>
           </div>
 
-        
-            
-
           <div className="carousel-window">
             <div
               className="carousel-track"
               style={{
-                transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
               }}
             >
               {projects.map((project) => (
                 <div key={project.title} className="carousel-slide">
                   <article className="project-card">
                     <div
-                      key={project.title}
                       style={{
                         backgroundImage: `url(${project.image})`,
                       }}
@@ -186,21 +182,18 @@ export default function PortfolioLayout() {
                 </div>
               ))}
             </div>
-
-
           </div>
-          </section>
 
-            <div className="carousel-controls">
-              <button className="carrosel-control" onClick={handlePrev}>
-                ‹
-              </button>
+          <div className="carousel-controls">
+            <button className="carrosel-control" onClick={handlePrev}>
+              ‹
+            </button>
 
-              <button className="carrosel-control" onClick={handleNext}>
-                ›
-              </button>
-            </div>
-        
+            <button className="carrosel-control" onClick={handleNext}>
+              ›
+            </button>
+          </div>
+        </section>
 
         <section id="contato" className="contact container">
           <div className="contact-box">
