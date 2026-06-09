@@ -1,5 +1,6 @@
 'use client';
 import "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -61,7 +62,7 @@ export default function ProjectsPage() {
           <h1 className="logo">Ângelo</h1>
 
           <nav className="nav">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </nav>
         </div>
       </header>
