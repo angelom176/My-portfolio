@@ -187,7 +187,6 @@ export default function PortfolioLayout() {
               ))}
             </div>
 
-
           </div>
           </section>
 
