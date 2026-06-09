@@ -33,7 +33,7 @@ const projects = [
   },
   {
     title: 'Wild West Game',
-    slug: 'wildWestGame',
+    slug: 'java-card-game',
     description:
       'A short and clear project description, highlighting the problem solved and the final result.',
     image: '/imagens/wildWestGame.png',
@@ -104,7 +104,16 @@ export default function PortfolioLayout() {
           </div>
 
           <div className="hero-card">
-            <div className="status-card">
+              <div
+                className="status-card"
+                style={{
+                  backgroundImage: `linear-gradient(
+                    180deg,
+                    rgba(23, 23, 35, 0) 0%,
+                    rgba(61, 61, 90, 0.92) 100%
+                  ), url(${basePath}/imagens/angelo.jpeg)`,
+                }}
+              >
               <div>
                 <p className="card-label">Available for freelance</p>
                 <span className="status-dot"></span>
