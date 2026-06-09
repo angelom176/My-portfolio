@@ -1,8 +1,10 @@
 'use client'
-import Image from "next/image";
+
 import "./globals.css";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+
+const basePath = process.env.NODE_ENV === "production" ? "/My-portfolio" : "";
 
 const projects = [
   {
@@ -37,18 +39,6 @@ const projects = [
     image: '/imagens/wildWestGame.png',
     tags: ['React', 'CSS', 'UI'],
   },
-  {
-    title: 'Project Five',
-    description:
-      'Another project focused on performance, usability and a modern visual experience.',
-    tags: ['Frontend', 'Responsive', 'UX'],
-  },
-  {
-    title: 'Project Six',
-    description:
-      'A personal or freelance case with a clean interface and strong presentation.',
-    tags: ['Landing Page', 'Design', 'Web'],
-  },
 ];
 
 export default function PortfolioLayout() {
@@ -81,7 +71,7 @@ export default function PortfolioLayout() {
 
           <nav className="nav">
             <a href="#sobre">About</a>
-            <a href="/projects">Projects</a>
+            <Link href="/projects">Projects</Link>
             <a href="#contato">Contact</a>
           </nav>
         </div>
@@ -117,7 +107,6 @@ export default function PortfolioLayout() {
             <div className="status-card">
               <div>
                 <p className="card-label">Available for freelance</p>
-
                 <span className="status-dot"></span>
               </div>
 
@@ -150,9 +139,6 @@ export default function PortfolioLayout() {
             <h2>Some featured work</h2>
           </div>
 
-        
-            
-
           <div className="carousel-window">
             <div
               className="carousel-track"
@@ -164,9 +150,8 @@ export default function PortfolioLayout() {
                 <div key={project.title} className="carousel-slide">
                   <article className="project-card">
                     <div
-                      key={project.title}
                       style={{
-                        backgroundImage: `url(${project.image})`,
+                        backgroundImage: `url(${basePath}${project.image})`,
                       }}
                       className="project-image"
                     ></div>
@@ -182,24 +167,29 @@ export default function PortfolioLayout() {
                         </span>
                       ))}
                     </div>
+
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="project-link"
+                    >
+                      View project
+                    </Link>
                   </article>
                 </div>
               ))}
             </div>
-
           </div>
-          </section>
+        </section>
 
-            <div className="carousel-controls">
-              <button className="carrosel-control" onClick={handlePrev}>
-                ‹
-              </button>
+        <div className="carousel-controls">
+          <button className="carrosel-control" onClick={handlePrev}>
+            ‹
+          </button>
 
-              <button className="carrosel-control" onClick={handleNext}>
-                ›
-              </button>
-            </div>
-        
+          <button className="carrosel-control" onClick={handleNext}>
+            ›
+          </button>
+        </div>
 
         <section id="contato" className="contact container">
           <div className="contact-box">
