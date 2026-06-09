@@ -3,6 +3,7 @@ const repo = "My-portfolio";
 
 const nextConfig = {
   output: "export",
+  trailingSlash: true,
   basePath: isProd ? `/${repo}` : "",
   assetPrefix: isProd ? `/${repo}/` : "",
   images: {
