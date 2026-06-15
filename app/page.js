@@ -1,11 +1,12 @@
-'use client'
+'use client';
 
-import { Code2, Briefcase, Rocket } from "lucide-react";
-import "./globals.css";
-import { useState } from "react";
-import Link from "next/link";
+import { Code2, Briefcase, Rocket } from 'lucide-react';
+import { useState } from 'react';
+import Link from 'next/link';
+import './mainPage.css';
 
-const basePath = process.env.NODE_ENV === "production" ? "/My-portfolio" : "";
+const basePath =
+  process.env.NODE_ENV === 'production' ? '/My-portfolio' : '';
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const projects = [
     slug: 'java-card-game',
     description:
       'Java-based card game project focused on object-oriented programming, game logic implementation and software development fundamentals.',
-    image: '/imagens/wildWestGame.png',
+    image: '/imagens/wildWestern.png',
     tags: ['Java', 'OOP', 'Game Logic'],
   },
 ];
@@ -58,8 +59,8 @@ export default function PortfolioLayout() {
 
   return (
     <div className="portfolio-page">
-      <header className="portfolio-header">
-        <nav className="nav">
+      <header className="main-header">
+        <nav className="main-nav">
           <a href="#sobre">About</a>
           <Link href="/projects">Projects</Link>
           <a href="#contato">Contact</a>
@@ -67,36 +68,37 @@ export default function PortfolioLayout() {
       </header>
 
       <main>
-        <section className="hero container">
-          <div className="hero-text">
-            <p className="eyebrow">PORTFOLIO</p>
+        <section className="main-hero main-container">
+          <div className="main-hero-text">
+            <p className="main-eyebrow">PORTFOLIO</p>
 
-              <h2>
-                Computing Science student building web applications and software solutions.
-              </h2>
-          
+            <h2>
+              Computing Science student building web applications and software
+              solutions.
+            </h2>
 
-            <p className="hero-description">
-                I am a second-year Computing Science student focused on web development and
-                software engineering. I build projects using Next.js, React, JavaScript and
-                Java while continuously improving my understanding of software design,
-                development practices and user experience.
+            <p className="main-hero-description">
+              I am a second-year Computing Science student focused on web
+              development and software engineering. I build projects using
+              Next.js, React, JavaScript and Java while continuously improving
+              my understanding of software design, development practices and
+              user experience.
             </p>
 
-            <div className="hero-actions">
-              <a href="#projetos" className="btn btn-primary">
+            <div className="main-hero-actions">
+              <a href="#projetos" className="main-btn main-btn-primary">
                 View projects
               </a>
 
-              <a href="#contato" className="btn btn-secondary">
+              <a href="#contato" className="main-btn main-btn-secondary">
                 Get in touch
               </a>
             </div>
           </div>
 
-          <div className="hero-card">
+          <div className="main-hero-card">
             <div
-              className="status-card"
+              className="main-status-card"
               style={{
                 backgroundImage: `linear-gradient(
                   180deg,
@@ -106,101 +108,102 @@ export default function PortfolioLayout() {
               }}
             >
               <div>
-                <p className="card-label">Current Focus</p>
-                <span className="status-dot"></span>
+                <p className="main-card-label">Current Focus</p>
+                <span className="main-status-dot"></span>
               </div>
 
               <div>
-                <p className="card-label">Learning</p>
-                <p className="card-label">Current Focus</p>
+                <p className="main-card-label">Learning</p>
+                <p className="main-card-label">Current Focus</p>
                 <h3>Next.js, React and Software Development</h3>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="hero-topics">
-          <div className="topic-item">
-            <Code2 className="topic-icon" />
+        <section className="main-topics">
+          <div className="main-topic-item">
+            <Code2 className="main-topic-icon" />
 
-            <p className="topic-label">Frontend Development</p>
+            <p className="main-topic-label">Frontend Development</p>
 
             <h3>
-              Building responsive web applications with Next.js, React and modern web
-              technologies.
+              Building responsive web applications with Next.js, React and
+              modern web technologies.
             </h3>
           </div>
 
-          <div className="topic-item">
-            <Briefcase className="topic-icon" />
+          <div className="main-topic-item">
+            <Briefcase className="main-topic-icon" />
 
-            <p className="topic-label">Software Engineering</p>
+            <p className="main-topic-label">Software Engineering</p>
 
             <h3>
-              Developing Java applications while studying software architecture and
-              object-oriented design.
+              Developing Java applications while studying software architecture
+              and object-oriented design.
             </h3>
           </div>
 
-          <div className="topic-item">
-            <Rocket className="topic-icon" />
+          <div className="main-topic-item">
+            <Rocket className="main-topic-icon" />
 
-            <p className="topic-label">Computing Science</p>
+            <p className="main-topic-label">Computing Science</p>
 
             <h3>
-              Combining academic knowledge with real-world projects and continuous
-              learning.
+              Combining academic knowledge with real-world projects and
+              continuous learning.
             </h3>
           </div>
         </section>
 
-        <section id="sobre" className="about container">
-          <div className="section-heading">
-            <p className="section-tag">About me</p>
+        <section id="sobre" className="main-about main-container">
+          <div className="main-section-heading">
+            <p className="main-section-tag">About me</p>
 
             <h2>
-                Building technical skills through projects, study and continuous development.
+              Building technical skills through projects, study and continuous
+              development.
             </h2>
           </div>
 
-          <p className="about-text">
-            As a Computing Science student, I enjoy building web applications and
-            software projects that combine clean design, functionality and problem
-            solving. My current interests include Next.js, React, Java development and
-            software engineering principles.
+          <p className="main-about-text">
+            As a Computing Science student, I enjoy building web applications
+            and software projects that combine clean design, functionality and
+            problem solving. My current interests include Next.js, React, Java
+            development and software engineering principles.
           </p>
         </section>
 
-        <section id="projetos" className="projects container">
-          <div className="section-heading">
-            <p className="section-tag">Projects</p>
+        <section id="projetos" className="main-projects main-container">
+          <div className="main-section-heading">
+            <p className="main-section-tag">Projects</p>
             <h2>Some featured work</h2>
           </div>
 
-          <div className="carousel-window">
+          <div className="main-carousel-window">
             <div
-              className="carousel-track"
+              className="main-carousel-track"
               style={{
                 transform: `translateX(-${currentIndex * (100 / 3)}%)`,
               }}
             >
               {projects.map((project) => (
-                <div key={project.title} className="carousel-slide">
-                  <article className="project-card">
+                <div key={project.title} className="main-carousel-slide">
+                  <article className="main-project-card">
                     <div
+                      className="main-project-image"
                       style={{
                         backgroundImage: `url(${basePath}${project.image})`,
                       }}
-                      className="project-image"
-                    ></div>
+                    />
 
                     <h3>{project.title}</h3>
 
                     <p>{project.description}</p>
 
-                    <div className="tags">
+                    <div className="main-tags">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="tag">
+                        <span key={tag} className="main-tag">
                           {tag}
                         </span>
                       ))}
@@ -208,7 +211,7 @@ export default function PortfolioLayout() {
 
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="project-link"
+                      className="main-project-link"
                     >
                       View project
                     </Link>
@@ -219,30 +222,32 @@ export default function PortfolioLayout() {
           </div>
         </section>
 
-        <div className="carousel-controls">
-          <button className="carrosel-control" onClick={handlePrev}>
+        <div className="main-carousel-controls">
+          <button className="main-carousel-control" onClick={handlePrev}>
             ‹
           </button>
 
-          <button className="carrosel-control" onClick={handleNext}>
+          <button className="main-carousel-control" onClick={handleNext}>
             ›
           </button>
         </div>
 
-        <section id="contato" className="contact container">
-          <div className="contact-box">
-            <p className="section-tag">Contact</p>
+        <section id="contato" className="main-contact main-container">
+          <div className="main-contact-box">
+            <p className="main-section-tag">Contact</p>
 
-            <h2>
-              Let's connect and build something meaningful.
-            </h2>
+            <h2>Let's connect and build something meaningful.</h2>
 
             <p>
-              I am currently looking for internships, junior opportunities and projects
-              where I can continue growing as a web and software developer.
+              I am currently looking for internships, junior opportunities and
+              projects where I can continue growing as a web and software
+              developer.
             </p>
 
-            <a href="mailto:angelo-mmacedo@hotmail.com" className="btn btn-primary">
+            <a
+              href="mailto:angelo-mmacedo@hotmail.com"
+              className="main-btn main-btn-primary"
+            >
               Contact me
             </a>
           </div>

@@ -4,211 +4,198 @@ import "./style.css";
 const servicos = [
   {
     src: "/imagens/fluxoPotencia.jpeg",
-    titulo: "Estudo de fluxo de potência",
-    descricao: "Análise detalhada do fluxo de potência para otimizar a eficiência e a confiabilidade do sistema elétrico.",
+    titulo: "Power Flow Study",
+    descricao:
+      "Detailed analysis of electrical power flow to improve system efficiency, stability and reliability.",
   },
   {
     src: "/imagens/protecaoSeletividade.jpeg",
-    titulo: "Estudo de proteção e seletividade",
-    descricao: "Análise das características de proteção e seletividade para garantir a segurança e a confiabilidade do sistema elétrico.",  
+    titulo: "Protection and Selectivity Study",
+    descricao:
+      "Evaluation of protection devices and coordination settings to improve safety and reduce downtime.",
   },
   {
     src: "/imagens/arcFlash.jpeg",
-    titulo: "Análise de arc flash",
-    descricao: "Análise detalhada das conseqüências de um arco elétrico para garantir a segurança dos operadores.",
-
+    titulo: "Arc Flash Analysis",
+    descricao:
+      "Assessment of arc flash risks to support safer operations and better protection for electrical workers.",
   },
   {
     src: "/imagens/cabos.jpeg",
-    titulo: "Dimensionamento de cabos",
-    descricao: "Dimensionamento adequado dos cabos para garantir a eficiência e a segurança da instalação elétrica.",
+    titulo: "Cable Sizing",
+    descricao:
+      "Proper cable sizing based on load requirements, voltage drop, thermal limits and installation safety.",
   },
   {
     src: "/imagens/motores.jpeg",
-    titulo: "Estudo de motores elétricos",
-    descricao: "Análise detalhada do desempenho e da eficiência dos motores elétricos para otimizar o consumo de energia.",
+    titulo: "Electric Motor Study",
+    descricao:
+      "Performance and efficiency analysis of electric motors to optimize energy use and operational reliability.",
   },
 ];
 
-const esquerda = servicos.slice(0, 3);
-const direita = servicos.slice(3, 6);
-
 export default function Home() {
   return (
-    <>
-
-    
-      <Image
-        className="backgroundImage1"
-        src="/imagens/Firefly.jpg"
-        alt=""
-        fill
-        priority
-      />
-
-        <header className="header">
-        <h1>Forge</h1>
-
-        <ul>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-        </ul>
-
-        <a href="#contato">
-          <button type="button">SOLICITAR UM ORÇAMENTO</button>
-        </a>
-        </header>
-
-        <section className="firstContainer">
-        <p>
-          ESTUDOS PARA O MELHOR<br /> DO SEU
-          <strong> SISTEMA ELÉTRICO</strong>
-        </p>
-        <p className="description">Foco em soluções eficientes e seguras para sua infraestrutura elétrica.</p>
-
-        <div className="lineButtons">
-        
-        <a href="#contato">
-          <button className="buttonOne" type="button">Converse com um consultor</button>
-        </a>
-        <a href="#contato">
-          <button className="buttonTwo" type="button">Solicite um Orçamento</button>
-        </a>
-        </div>
-        </section>
-
-        
-    
-
-      <div className="secondContainer">
-        <h2>O QUE FAZEMOS?</h2>
-        <p>
-          lorem ipsum dolor sit amet, consectetur
-           adipiscing elit. Sed do eiusmod tempor incididunt ut
-           lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-      </div>
-
-      <div className="thirdContainer">
-        <div className="layoutCards">
-          <div className="coluna">
-            {esquerda.map((item) => (
-              <div className="card" key={item.src}>
-                <Image
-                  src={item.src}
-                  alt={item.titulo}
-                  width={400}
-                  height={300}
-                />
-
-                <div className="cardText">
-                  <h3>{item.titulo}</h3>
-                  <p>{item.descricao}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="coluna">
-            {direita.map((item) => (
-              <div className="card" key={item.src}>
-                <Image
-                  src={item.src}
-                  alt={item.titulo}
-                  width={400}
-                  height={300}
-                />
-
-                <div className="cardText">
-                  <h3>{item.titulo}</h3>
-                  <p>{item.descricao}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-        
-      <div className="fourthContainer">
-        <div className="line">
-          <h2>POR QUE ESCOLHER A PROPOWER?</h2>
-          <p>
-            Contamos com engenheiros eletricistas com vasta experiência em
-            análise de sistemas elétricos de baixa, média e alta tensão.
-          </p>
-
-          <h3>Precisão e Confiabilidade dos Resultados</h3>
-          <p>
-            Mais do que entregar um estudo técnico, entendemos a realidade da
-            sua operação e adaptamos nossas soluções às suas necessidades
-            específicas.
-          </p>
-
-          <h3>O Melhor Custo-Benefício para o Seu Projeto</h3>
-          <p>
-            Por sermos uma equipe enxuta e especializada, conseguimos oferecer
-            preços mais competitivos sem abrir mão da excelência técnica.
-          </p>
-        </div>
-
+    <main className="forgePage">
+      <section className="heroSection">
         <Image
-          className="raio"
-          src="/imagens/raio.png"
-          alt="Ícone de raio"
-          width={200}
-          height={200}
+          className="backgroundImage"
+          src="/imagens/Firefly.jpg"
+          alt=""
+          fill
+          priority
         />
 
+        <header className="header">
+          <h1>Forge</h1>
+
+         
+
+          <nav>
+            <a href="/projects/">Back To Portfolio</a>
+            <a href="#contato">Contact</a>
+            <a href="#projetos">Projects</a>
+            <a href="#servicos">Services</a>
+          </nav>
+
+          <a href="#contato" className="headerButton">
+            Request Quote
+          </a>
+        </header>
+
+        <div className="heroContent">
+          <h2>
+            Studies for the best of your{" "}
+            <strong>electrical system</strong>
+          </h2>
+
+          <p>
+            Focus on efficient and safe solutions for your electrical infrastructure.
+          </p>
+
+          <div className="heroButtons">
+            <a href="#contato" className="button buttonPrimary">
+              Converse with a consultant
+            </a>
+
+            <a href="#contato" className="button buttonSecondary">
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="aboutSection">
+        <h2>What we do?</h2>
+
+        <p>
+          We provide technical studies for electrical systems with a focus on safety,
+          efficiency and reliability. Our work helps companies reduce operational risks,
+          improve system performance and make better engineering decisions.
+        </p>
+      </section>
+
+      <section id="servicos" className="servicesSection">
+        <div className="sectionHeading">
+          <p>Services</p>
+          <h2>Study Areas</h2>
+        </div>
+
+        <div className="servicesGrid">
+          {servicos.map((item) => (
+            <article className="serviceCard" key={item.src}>
+              <Image
+                src={item.src}
+                alt={item.titulo}
+                width={400}
+                height={300}
+              />
+
+              <div>
+                <h3>{item.titulo}</h3>
+                <p>{item.descricao}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="whySection">
         <Image
-          className="backgroundImage2"
+          className="whyBackground"
           src="/imagens/engenheiroEletrecista.jpg"
           alt=""
           fill
         />
-      </div>
 
-      <div className="layerStack"></div>
+        <div className="whyContent">
+          <div>
+            <h2>Why choose Forge?</h2>
 
-      <div className="projetos">
-        <h4>A ESCOLHIDA DAQUELES QUE RECONHECEM</h4>
-        <h1>A IMPORTÂNCIA DA ENGENHARIA ELÉTRICA</h1>
+            <p>
+              We have specialized professionals in the analysis of electrical systems
+              of low, medium and high voltage.
+            </p>
 
-        <div className="projetosText">
-          <div className="projeto"></div>
-          <div className="projeto"></div>
-          <div className="projeto"></div>
+            <h3>Accuracy and Reliability</h3>
+            <p>
+              More than delivering a technical study, we understand the reality of
+              your operation and adapt our solutions to your needs.
+            </p>
+
+            <h3>Best Cost-Benefit</h3>
+            <p>
+              As a lean and specialized team, we can offer competitive prices without compromising on technical excellence.
+            </p>
+          </div>
+
+          <Image
+            className="raio"
+            src="/imagens/raio.png"
+            alt="Ícone de raio"
+            width={260}
+            height={260}
+          />
         </div>
-      </div>
+      </section>
 
-      <div id="contato" className="content">
-        <h2>FALE CONOSCO</h2>
-        <p>Entre em contato conosco para discutir suas necessidades.</p>
+      <section id="projetos" className="projectsSection">
+        <p>Projects</p>
+        <h2>The choice of those who recognize the importance of electrical engineering</h2>
 
-        <form>
-          <label htmlFor="nome">Nome</label>
-          <input id="nome" type="text" name="nome" />
+        <div className="projectsGrid">
+          <div className="projectBox"></div>
+          <div className="projectBox"></div>
+          <div className="projectBox"></div>
+        </div>
+      </section>
 
-          <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" />
+      <section id="contato" className="contactSection">
+        <div className="contactBox">
+          <h2>Contact Us</h2>
+          <p>Get in touch to discuss your needs.</p>
 
-          <label htmlFor="telefone">Telefone</label>
-          <input id="telefone" type="tel" name="telefone" />
+          <form>
+            <label htmlFor="nome">Name</label>
+            <input id="nome" type="text" name="nome" />
 
-          <label htmlFor="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows={4}></textarea>
+            <label htmlFor="email">Email</label>
+            <input id="email" type="email" name="email" />
 
-          <button type="submit">ENVIAR</button>
-        </form>
-      </div>
+            <label htmlFor="telefone">Phone</label>
+            <input id="telefone" type="tel" name="telefone" />
 
-      <footer>
+            <label htmlFor="mensagem">Message</label>
+            <textarea id="mensagem" name="mensagem" rows={4}></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <footer className="footer">
         <Image
-          className="backgroundFooter"
+          className="footerBackground"
           src="/imagens/engenheiroEletrecista.jpg"
           alt=""
           fill
@@ -216,18 +203,18 @@ export default function Home() {
 
         <Image
           src="/imagens/logo.png"
-          alt="Logo da ProPower"
+          alt="Logo da Forge"
           width={200}
           height={100}
         />
 
-        <div>contato@propower.com.br</div>
-        <div>(11) 99999-9999</div>
-        <div>Rua Exemplo, 123 - São Paulo, SP</div>
-        <div>linkedin.com/in/propower</div>
+        <p>contact@forge.ie</p>
+        <p>(083) 234-4932</p>
+        <p>Av. Example, 123 - Dublin, Co. Dublin</p>
+        <p>linkedin.com/in/forge</p>
 
-        <p>© 2024 ProPower. Todos os direitos reservados.</p>
+        <small>© 2024 Forge. All rights reserved.</small>
       </footer>
-    </>
+    </main>
   );
 }
