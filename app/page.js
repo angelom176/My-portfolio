@@ -1,5 +1,6 @@
 'use client'
 
+import { Code2, Briefcase, Rocket } from "lucide-react";
 import "./globals.css";
 import { useState } from "react";
 import Link from "next/link";
@@ -11,7 +12,7 @@ const projects = [
     title: 'Forge - Electrical Engineering',
     slug: 'electricalEngineer',
     description:
-      'A short and clear project description, highlighting the problem solved and the final result.',
+      'Professional website developed for an electrical engineering business, focusing on responsive design, performance and user experience.',
     image: '/imagens/electricalEngineer.png',
     tags: ['React', 'CSS', 'UI'],
   },
@@ -19,25 +20,25 @@ const projects = [
     title: 'Ayrton Senna Tribute',
     slug: 'ayrtonSennaTribute',
     description:
-      'Another project focused on performance, usability and a modern visual experience.',
+      'A tribute website created to showcase Ayrton Senna’s legacy while practicing modern front-end development and responsive design techniques.',
     image: '/imagens/senna.png',
     tags: ['Frontend', 'Responsive', 'UX'],
   },
   {
-    title: 'Game 2D - Fireboy and Watergirl',
+    title: 'Fireboy and Watergirl',
     slug: 'fireboyAndWatergirl',
     description:
-      'A personal or freelance case with a clean interface and strong presentation.',
+      'A 2D game project inspired by Fireboy and Watergirl, developed to explore game mechanics, interaction design and JavaScript programming.',
     image: '/imagens/game.jpg',
-    tags: ['Landing Page', 'Design', 'Web'],
+    tags: ['JavaScript', 'Game Logic', '2D'],
   },
   {
-    title: 'Wild West Game',
+    title: 'Wild West Card Game',
     slug: 'java-card-game',
     description:
-      'A short and clear project description, highlighting the problem solved and the final result.',
+      'Java-based card game project focused on object-oriented programming, game logic implementation and software development fundamentals.',
     image: '/imagens/wildWestGame.png',
-    tags: ['React', 'CSS', 'UI'],
+    tags: ['Java', 'OOP', 'Game Logic'],
   },
 ];
 
@@ -48,33 +49,21 @@ export default function PortfolioLayout() {
   const maxIndex = Math.max(projects.length - visibleCards, 0);
 
   const handleNext = () => {
-    if (currentIndex < maxIndex) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
+    setCurrentIndex(currentIndex < maxIndex ? currentIndex + 1 : 0);
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(maxIndex);
-    }
+    setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : maxIndex);
   };
 
   return (
     <div className="portfolio-page">
       <header className="portfolio-header">
-        <div className="container header-inner">
-          <h1 className="logo">Ângelo</h1>
-
-          <nav className="nav">
-            <a href="#sobre">About</a>
-            <Link href="/projects">Projects</Link>
-            <a href="#contato">Contact</a>
-          </nav>
-        </div>
+        <nav className="nav">
+          <a href="#sobre">About</a>
+          <Link href="/projects">Projects</Link>
+          <a href="#contato">Contact</a>
+        </nav>
       </header>
 
       <main>
@@ -82,14 +71,16 @@ export default function PortfolioLayout() {
           <div className="hero-text">
             <p className="eyebrow">PORTFOLIO</p>
 
-            <h2>
-              Designer and developer creating elegant digital experiences.
-            </h2>
+              <h2>
+                Computing Science student building web applications and software solutions.
+              </h2>
+          
 
             <p className="hero-description">
-              I build modern, responsive interfaces focused on visual clarity.
-              This portfolio was designed to showcase my work in a professional way,
-              with enough space to highlight my identity and technical skills.
+                I am a second-year Computing Science student focused on web development and
+                software engineering. I build projects using Next.js, React, JavaScript and
+                Java while continuously improving my understanding of software design,
+                development practices and user experience.
             </p>
 
             <div className="hero-actions">
@@ -104,41 +95,79 @@ export default function PortfolioLayout() {
           </div>
 
           <div className="hero-card">
-              <div
-                className="status-card"
-                style={{
-                  backgroundImage: `linear-gradient(
-                    180deg,
-                    rgba(23, 23, 35, 0) 0%,
-                    rgba(61, 61, 90, 0.92) 100%
-                  ), url(${basePath}/imagens/angelo.jpeg)`,
-                }}
-              >
+            <div
+              className="status-card"
+              style={{
+                backgroundImage: `linear-gradient(
+                  180deg,
+                  rgba(23, 23, 35, 0) 0%,
+                  rgba(61, 61, 90, 0.92) 100%
+                ), url(${basePath}/imagens/angelo.jpeg)`,
+              }}
+            >
               <div>
-                <p className="card-label">Available for freelance</p>
+                <p className="card-label">Current Focus</p>
                 <span className="status-dot"></span>
               </div>
 
               <div>
-                <p className="card-label">Specialty</p>
-                <h3>React, UI and modern front-end</h3>
+                <p className="card-label">Learning</p>
+                <p className="card-label">Current Focus</p>
+                <h3>Next.js, React and Software Development</h3>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="hero-topics">
+          <div className="topic-item">
+            <Code2 className="topic-icon" />
+
+            <p className="topic-label">Frontend Development</p>
+
+            <h3>
+              Building responsive web applications with Next.js, React and modern web
+              technologies.
+            </h3>
+          </div>
+
+          <div className="topic-item">
+            <Briefcase className="topic-icon" />
+
+            <p className="topic-label">Software Engineering</p>
+
+            <h3>
+              Developing Java applications while studying software architecture and
+              object-oriented design.
+            </h3>
+          </div>
+
+          <div className="topic-item">
+            <Rocket className="topic-icon" />
+
+            <p className="topic-label">Computing Science</p>
+
+            <h3>
+              Combining academic knowledge with real-world projects and continuous
+              learning.
+            </h3>
           </div>
         </section>
 
         <section id="sobre" className="about container">
           <div className="section-heading">
             <p className="section-tag">About me</p>
+
             <h2>
-              I build products focused on aesthetics, clarity and performance.
+                Building technical skills through projects, study and continuous development.
             </h2>
           </div>
 
           <p className="about-text">
-            I use this space to share my background, skills, workflow and the
-            type of projects I enjoy building. My goal is to create clean,
-            functional and visually strong digital experiences.
+            As a Computing Science student, I enjoy building web applications and
+            software projects that combine clean design, functionality and problem
+            solving. My current interests include Next.js, React, Java development and
+            software engineering principles.
           </p>
         </section>
 
@@ -204,16 +233,16 @@ export default function PortfolioLayout() {
           <div className="contact-box">
             <p className="section-tag">Contact</p>
 
-            <h2>Let’s build something interesting together.</h2>
+            <h2>
+              Let's connect and build something meaningful.
+            </h2>
 
             <p>
-              Add your email, LinkedIn, GitHub or a simple contact form here.
+              I am currently looking for internships, junior opportunities and projects
+              where I can continue growing as a web and software developer.
             </p>
 
-            <a
-              href="mailto:youremail@example.com"
-              className="btn btn-primary"
-            >
+            <a href="mailto:angelo-mmacedo@hotmail.com" className="btn btn-primary">
               Contact me
             </a>
           </div>
