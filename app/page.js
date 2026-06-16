@@ -1,9 +1,37 @@
 'use client';
 
-import { Code2, Briefcase, Rocket } from 'lucide-react';
+import { Code2, Briefcase, Rocket, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import './mainPage.css';
+import {motion} from 'framer-motion';
+
+export function FeatureCard({icon, title, text}) {
+  return(
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="feature-card"
+    >
+      {icon}
+      <h4>{title}</h4>
+      <p>{text}</p>
+    </motion.div>
+  )
+}
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 const basePath =
   process.env.NODE_ENV === 'production' ? '/My-portfolio' : '';
@@ -122,39 +150,59 @@ export default function PortfolioLayout() {
         </section>
 
         <section className="main-topics">
-          <div className="main-topic-item">
-            <Code2 className="main-topic-icon" />
+          <motion.div
+            className="main-topic-item"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0 }}
+          >
 
-            <p className="main-topic-label">Frontend Development</p>
+          <Code2 className="main-topic-icon" />
+          <p className="main-topic-label">Frontend Development</p>
+          <h3>
+            Building responsive web applications with Next.js, React and modern web technologies.
+          </h3>
+        </motion.div>
 
-            <h3>
-              Building responsive web applications with Next.js, React and
-              modern web technologies.
-            </h3>
-          </div>
+        <motion.div
+          className="main-topic-item"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Briefcase className="main-topic-icon" />
 
-          <div className="main-topic-item">
-            <Briefcase className="main-topic-icon" />
+          <p className="main-topic-label">Software Engineering</p>
 
-            <p className="main-topic-label">Software Engineering</p>
+          <h3>
+            Developing Java applications while studying software architecture and
+            object-oriented design.
+          </h3>
+        </motion.div>
 
-            <h3>
-              Developing Java applications while studying software architecture
-              and object-oriented design.
-            </h3>
-          </div>
-
-          <div className="main-topic-item">
+        <motion.div
+          className="main-topic-item"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
             <Rocket className="main-topic-icon" />
 
             <p className="main-topic-label">Computing Science</p>
 
             <h3>
-              Combining academic knowledge with real-world projects and
-              continuous learning.
+              Combining academic knowledge with real-world projects and continuous
+              learning.
             </h3>
-          </div>
-        </section>
+          </motion.div>
+          </section>
+
 
         <section id="sobre" className="main-about main-container">
           <div className="main-section-heading">
@@ -172,8 +220,8 @@ export default function PortfolioLayout() {
             problem solving. My current interests include Next.js, React, Java
             development and software engineering principles.
           </p>
-        </section>
-
+          </section>
+        
         <section id="projetos" className="main-projects main-container">
           <div className="main-section-heading">
             <p className="main-section-tag">Projects</p>
@@ -224,11 +272,11 @@ export default function PortfolioLayout() {
 
         <div className="main-carousel-controls">
           <button className="main-carousel-control" onClick={handlePrev}>
-            ‹
+            <ChevronLeft size={24} />
           </button>
 
           <button className="main-carousel-control" onClick={handleNext}>
-            ›
+            <ChevronRight size={24} />
           </button>
         </div>
 
