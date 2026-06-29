@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import './projects.css';
+import styles from './projects.module.css';
 
 const basePath =
   process.env.NODE_ENV === 'production' ? '/My-portfolio' : '';
@@ -43,41 +43,41 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <>
-      <header className="portfolio-header">
-        <nav className="nav">
+    <main className={styles.projectsContainer}>
+      <header className={styles.portfolioHeader}>
+        <nav className={styles.nav}>
           <Link href="/">Home</Link>
         </nav>
       </header>
 
-      <main className="projects container">
-        <div className="section-heading">
-          <p className="section-tag">Projects</p>
+      <section className={`${styles.projects} ${styles.container}`}>
+        <div className={styles.sectionHeading}>
+          <p className={styles.sectionTag}>Projects</p>
           <h2>Some featured work</h2>
         </div>
 
-        <div className="projects-list">
+        <div className={styles.projectsList}>
           {projects.map(({ title, slug, description, image, tags }) => (
             <Link
               key={slug}
               href={`/projects/${slug}`}
-              className="project-card-link"
+              className={styles.projectCardLink}
             >
-              <article className="project-card">
+              <article className={styles.projectCard}>
                 <div
-                  className="project-image"
+                  className={styles.projectImage}
                   style={{
                     backgroundImage: `url(${basePath}${image})`,
                   }}
                 />
 
-                <div className="project-content">
+                <div className={styles.projectContent}>
                   <h3>{title}</h3>
                   <p>{description}</p>
 
-                  <div className="tags">
+                  <div className={styles.tags}>
                     {tags.map((tag) => (
-                      <span key={tag} className="tag">
+                      <span key={tag} className={styles.tag}>
                         {tag}
                       </span>
                     ))}
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
             </Link>
           ))}
         </div>
-      </main>
-    </>
+      </section>
+    </main>
   );
 }

@@ -1,6 +1,7 @@
-body{
-    background: radial-gradient(circle at top, #151524 0%, #0a0a0f 55%);
-
+.projectsContainer {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #151524 0%, #0a0a0f 55%);
+  color: #fff;
 }
 
 .container {
@@ -10,7 +11,7 @@ body{
 
 /* HEADER */
 
-.portfolio-header {
+.portfolioHeader {
   position: fixed;
   top: 24px;
   left: 50%;
@@ -37,6 +38,7 @@ body{
 .nav a {
   color: rgba(255, 255, 255, 0.75);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .nav a:hover {
@@ -49,19 +51,19 @@ body{
   padding: 140px 0 80px;
 }
 
-.section-tag {
+.sectionTag {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.75rem;
   color: #8f96a3;
 }
 
-.section-heading h2 {
+.sectionHeading h2 {
   margin-top: 12px;
   font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-.projects-list {
+.projectsList {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -71,7 +73,12 @@ body{
 
 /* CARD */
 
-.project-card {
+.projectCardLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.projectCard {
   display: grid;
   grid-template-columns: 500px 1fr;
   gap: 42px;
@@ -93,13 +100,13 @@ body{
     border-color 0.3s ease;
 }
 
-.project-card:hover {
+.projectCard:hover {
   transform: translateY(-6px);
 
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.project-image {
+.projectImage {
   width: 100%;
   height: 320px;
 
@@ -112,20 +119,20 @@ body{
   overflow: hidden;
 }
 
-.project-content {
+.projectContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.project-content h3 {
+.projectContent h3 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
 
   margin-bottom: 18px;
 }
 
-.project-content p {
+.projectContent p {
   max-width: 600px;
 
   font-size: 1.05rem;
@@ -158,11 +165,11 @@ body{
 /* TABLET */
 
 @media (max-width: 1000px) {
-  .project-card {
+  .projectCard {
     grid-template-columns: 1fr;
   }
 
-  .project-image {
+  .projectImage {
     height: 300px;
   }
 }
@@ -174,7 +181,7 @@ body{
     width: calc(100% - 32px);
   }
 
-  .portfolio-header {
+  .portfolioHeader {
     display: none;
   }
 
@@ -182,16 +189,16 @@ body{
     padding-top: 70px;
   }
 
-  .project-card {
+  .projectCard {
     padding: 20px;
     gap: 24px;
   }
 
-  .project-image {
+  .projectImage {
     height: 220px;
   }
 
-  .project-content h3 {
+  .projectContent h3 {
     font-size: 1.8rem;
   }
 }

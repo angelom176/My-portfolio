@@ -86,6 +86,7 @@ export default function PortfolioLayout() {
   };
 
   return (
+    
     <div className="portfolio-page">
       <header className="main-header">
         <nav className="main-nav">
@@ -97,6 +98,14 @@ export default function PortfolioLayout() {
 
       <main>
         <section className="main-hero main-container">
+          <motion.div
+            className="main-topic-item"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0 }}
+    >
           <div className="main-hero-text">
             <p className="main-eyebrow">PORTFOLIO</p>
 
@@ -123,7 +132,16 @@ export default function PortfolioLayout() {
               </a>
             </div>
           </div>
+          </motion.div>
 
+          <motion.div
+            className="main-topic-item"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+          >
           <div className="main-hero-card">
             <div
               className="main-status-card"
@@ -147,6 +165,8 @@ export default function PortfolioLayout() {
               </div>
             </div>
           </div>
+          </motion.div>
+
         </section>
 
         <section className="main-topics">
