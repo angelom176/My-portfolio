@@ -16,12 +16,12 @@ const projects = [
     tags: ['React', 'CSS', 'UI'],
   },
   {
-    title: 'Ayrton Senna Tribute',
-    slug: 'ayrtonSennaTribute',
+    title: 'Punch 2 Learn - Educational Platform',
+    slug: 'educationalPlatform',
     description:
-      'Another project focused on performance, usability and a modern visual experience.',
-    image: '/imagens/senna.png',
-    tags: ['Frontend', 'Responsive', 'UX'],
+      'An educational platform designed to make learning fun and interactive through engaging activities and gamification elements.',
+    image: '/imagens/punch2learn.png',
+    tags: ['HTML', 'CSS', 'UI'],
   },
   {
     title: 'Game 2D - Fireboy and Watergirl',
