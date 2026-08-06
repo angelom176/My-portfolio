@@ -33,8 +33,7 @@ const fadeUp = {
   },
 };
 
-const basePath =
-  process.env.NODE_ENV === 'production' ? '/My-portfolio' : '';
+
 
 const projects = [
   {
@@ -148,7 +147,7 @@ export default function PortfolioLayout() {
                   backgroundImage: `linear-gradient(180deg,
                     rgba(23, 23, 35, 0) 0%,
                     rgba(61, 61, 90, 0.92) 100%
-                  ), url(${basePath}/imagens/angelo.jpeg)`,
+                  ), url(/imagens/angelo.jpeg)`,
                 }}>
 
                   <div>
@@ -306,7 +305,7 @@ export default function PortfolioLayout() {
                   
                     <div
                       className={`main-project-image image-${project.slug}`}
-                      style={{backgroundImage: `url(${basePath}${project.image})`,
+                      style={{backgroundImage: `url(${project.image})`,
                       }}/>
 
                       <div className="main-project-content">

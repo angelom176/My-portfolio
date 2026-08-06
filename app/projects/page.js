@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import styles from './projects.module.css';
 
-const basePath =
-  process.env.NODE_ENV === 'production' ? '/My-portfolio' : '';
 
 const projects = [
   {
@@ -71,7 +69,7 @@ export default function ProjectsPage() {
                     <div
                       className={`main-project-image image-${project.slug}`}
                       style={{
-                        backgroundImage: `url(${basePath}${project.image})`,
+                        backgroundImage: `url(${project.image})`,
                       }}
                     />
 
