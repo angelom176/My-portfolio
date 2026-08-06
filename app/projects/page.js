@@ -8,36 +8,42 @@ const basePath =
 
 const projects = [
   {
-    title: 'Forge - Electrical Engineering',
-    slug: 'electricalEngineer',
+    type: 'FULL STACK',
+    title: 'Event Management System',
+    slug: 'eventManagement',
     description:
-      'A short and clear project description, highlighting the problem solved and the final result.',
-    image: '/imagens/electricalEngineer.png',
-    tags: ['React', 'CSS', 'UI'],
+      'A full stack application to manage events, users, and registrations with authencation and admin dashboard',
+    image: '/imagens/eventSystem.png',
+    tags: ['React', 'Node.js', 'MongoDB'],
   },
+  /*
   {
+    type: 'Educational Platform',
     title: 'Punch 2 Learn - Educational Platform',
-    slug: 'educationalPlatform',
+    slug: 'punch2learn',
     description:
       'An educational platform designed to make learning fun and interactive through engaging activities and gamification elements.',
     image: '/imagens/punch2learn.png',
     tags: ['HTML', 'CSS', 'UI'],
   },
+  
   {
-    title: 'Game 2D - Fireboy and Watergirl',
+    type: 'Java',
+    title: 'Fireboy and Watergirl',
     slug: 'fireboyAndWatergirl',
     description:
-      'A personal or freelance case with a clean interface and strong presentation.',
+      'A 2D game project inspired by Fireboy and Watergirl, developed to explore game mechanics, interaction design and JavaScript programming.',
     image: '/imagens/game.jpg',
-    tags: ['Landing Page', 'Design', 'Web'],
-  },
+    tags: ['JavaScript', 'Game Logic', '2D'],
+  },*/
   {
-    title: 'Wild West Game',
+    type: 'Java',
+    title: 'Wild West Card Game',
     slug: 'java-card-game',
     description:
-      'A personal or freelance case with a clean interface and strong presentation.',
-    image: '/imagens/wildWestern.png',
-    tags: ['Landing Page', 'Design', 'Web'],
+      'Java-based card game project focused on object-oriented programming, game logic implementation and software development fundamentals.',
+    image: '/imagens/ibm.png',
+    tags: ['Java', 'OOP', 'Game Logic'],
   },
 ];
 
@@ -57,34 +63,43 @@ export default function ProjectsPage() {
         </div>
 
         <div className={styles.projectsList}>
-          {projects.map(({ title, slug, description, image, tags }) => (
-            <Link
-              key={slug}
-              href={`/projects/${slug}`}
-              className={styles.projectCardLink}
-            >
-              <article className={styles.projectCard}>
-                <div
-                  className={styles.projectImage}
-                  style={{
-                    backgroundImage: `url(${basePath}${image})`,
-                  }}
-                />
+          {projects.map((project, index) => (
+                
+                  <article className={`main-project-card ${index % 2 === 0 ? "left" : "right"}`} key={project.slug}>
+                  
+                    
+                    <div
+                      className={`main-project-image image-${project.slug}`}
+                      style={{
+                        backgroundImage: `url(${basePath}${project.image})`,
+                      }}
+                    />
 
-                <div className={styles.projectContent}>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
+                      <div className="main-project-content">
 
-                  <div className={styles.tags}>
-                    {tags.map((tag) => (
-                      <span key={tag} className={styles.tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            </Link>
+                    <p className="main-project-type">{project.type}</p>
+
+                    <h3>{project.title}</h3>
+
+                    <p>{project.description}</p>
+
+                    <div className="main-tags">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="main-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="main-project-link"
+                    >
+                      View project
+                    </Link>
+                    </div>
+                  </article>
+             
           ))}
         </div>
       </section>

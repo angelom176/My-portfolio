@@ -1,25 +1,30 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata = {
   title: "Ângelo's Portfolio",
-  description: "Computing Science student focused on web development, software engineering and modern applications.",
+  description:
+    "Computing Science student focused on web development, software engineering and modern applications.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} data-scroll-behavior="smooth">
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={geistMono.variable}
+      data-scroll-behavior="smooth"
+    >
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
