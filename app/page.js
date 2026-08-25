@@ -286,6 +286,12 @@ export default function PortfolioLayout() {
             As a Computing Science student, I enjoy building web applications
             and software projects that combine clean design, functionality and
             problem solving. My current interests include Next.js, React, Java
+            development and software engineering principles. As a Computing Science student, I enjoy building web applications
+            and software projects that combine clean design, functionality and
+            problem solving. My current interests include Next.js, React, Java
+            development and software engineering principles. As a Computing Science student, I enjoy building web applications
+            and software projects that combine clean design, functionality and
+            problem solving. My current interests include Next.js, React, Java
             development and software engineering principles.
           </p>
           </div>
@@ -339,7 +345,7 @@ export default function PortfolioLayout() {
 
         <section id="contato" className="main-contact main-container">
           <div className="main-contact-box">
-            <p className="main-section-tag">Contact</p>
+            <p>Contact</p>
 
             <h2>Let's connect and build something meaningful.</h2>
 
