@@ -272,7 +272,7 @@ export default function PortfolioLayout() {
           </section>
 
 
-        <section className="main-about">
+        <section id="sobre" className="main-about">
           <div className="main-container">
             <div className="main-section-heading">
             <p className="main-section-tag">About me</p>
@@ -284,16 +284,8 @@ export default function PortfolioLayout() {
           </div>
 
           <p className="main-about-text">
-            As a Computing Science student, I enjoy building web applications
-            and software projects that combine clean design, functionality and
-            problem solving. My current interests include Next.js, React, Java
-            development and software engineering principles. As a Computing Science student, I enjoy building web applications
-            and software projects that combine clean design, functionality and
-            problem solving. My current interests include Next.js, React, Java
-            development and software engineering principles. As a Computing Science student, I enjoy building web applications
-            and software projects that combine clean design, functionality and
-            problem solving. My current interests include Next.js, React, Java
-            development and software engineering principles.
+            As a Computing Science student, I am passionate about creating web applications and software that combine clean design, practical functionality, and thoughtful problem-solving. I enjoy turning ideas into real, user-friendly projects while continuously improving my skills in Next.js, React, Java, and full-stack development. I am especially interested in software engineering principles and eager to gain professional experience, contribute to meaningful projects, and grow as a developer.
+
           </p>
           </div>
           </section>

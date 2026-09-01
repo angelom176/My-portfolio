@@ -1,5 +1,6 @@
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={geistMono.variable}
-      data-scroll-behavior="smooth"
     >
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

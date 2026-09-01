@@ -9,10 +9,11 @@ const projects = [
     type: 'FULL STACK',
     title: 'Event Management System',
     slug: 'eventManagement',
+    url: 'https://eventhub-smoky-tau.vercel.app/',
     description:
       'A full stack application to manage events, users, and registrations with authencation and admin dashboard',
     image: '/imagens/eventSystem.png',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    tags: ['React', 'Node.js', 'MySQL'],
   },
   /*
   {
@@ -90,7 +91,8 @@ export default function ProjectsPage() {
                     </div>
 
                     <Link
-                      href={`/projects/${project.slug}`}
+                      href={project.url ?? `/projects/${project.slug}`}
+                      target={project.url ? '_blank' : 'undefined'}
                       className="main-project-link"
                     >
                       View project
