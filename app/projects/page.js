@@ -11,7 +11,7 @@ const projects = [
     slug: 'eventManagement',
     url: 'https://eventhub-smoky-tau.vercel.app/',
     description:
-      "Full stack event management platform with JWT authentication, role-based admin dashboard, and MySQL-backed registration system handling CRUD operations for events and attendees.",
+      "Full stack event management platform with JWT authentication, role-based admin dashboard, and MySQL-backed registration system handling CRUD operations for events and attendees. You can acess the admin dashboard using the following credentials: Email: email@test.com | Password: password123",
     image: '/imagens/eventSystem.png',
     tags: ['React', 'Node.js', 'MySQL'],
   },
