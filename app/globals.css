@@ -107,6 +107,7 @@ pre {
   flex-direction: column;
   gap: 12px;
   padding: 24px;
+  color: #e5e7eb;
 }
 .main-tags {
   gap: 10px;

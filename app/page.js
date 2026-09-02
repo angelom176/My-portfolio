@@ -42,30 +42,11 @@ const projects = [
     slug: 'eventManagement',
     url: 'https://eventhub-smoky-tau.vercel.app/',
     description:
-      'A full stack application to manage events, users, and registrations with authencation and admin dashboard',
+      "Full stack event management platform with JWT authentication, role-based admin dashboard, and MySQL-backed registration system handling CRUD operations for events and attendees.",
     image: '/imagens/eventSystem.png',
-    tags: ['React', 'Node.js', 'MongoDB'],
-  },
-  /*
-  {
-    type: 'Educational Platform',
-    title: 'Punch 2 Learn - Educational Platform',
-    slug: 'punch2learn',
-    description:
-      'An educational platform designed to make learning fun and interactive through engaging activities and gamification elements.',
-    image: '/imagens/punch2learn.png',
-    tags: ['HTML', 'CSS', 'UI'],
+    tags: ['React', 'Node.js', 'MySQL'],
   },
   
-  {
-    type: 'Java',
-    title: 'Fireboy and Watergirl',
-    slug: 'fireboyAndWatergirl',
-    description:
-      'A 2D game project inspired by Fireboy and Watergirl, developed to explore game mechanics, interaction design and JavaScript programming.',
-    image: '/imagens/game.jpg',
-    tags: ['JavaScript', 'Game Logic', '2D'],
-  },*/
   {
     type: 'Java',
     title: 'Wild West Card Game',
@@ -93,6 +74,10 @@ export default function PortfolioLayout() {
             <nav className="main-nav">
                 <a href="#sobre">About</a>
                 <Link href="/projects">Projects</Link>
+                <a href="https://linkedin.com/in/ângelo-macedo-9585b320b" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+                <a href="https://github.com/angelom176" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="#contato">Contact</a>
             </nav>
         </header>
@@ -158,7 +143,7 @@ export default function PortfolioLayout() {
 
                   <div>
                     <p className="main-card-label">Learning</p>
-                    <p className="main-card-label">Current Focus</p>
+                    
                     <h3>Next.js, React and Software Development</h3>
                   </div>
               </div>
@@ -349,12 +334,18 @@ export default function PortfolioLayout() {
               developer.
             </p>
 
-            <a
-              href="mailto:angelo-mmacedo@hotmail.com"
-              className="main-btn main-btn-primary"
-            >
-              Contact me
-            </a>
+            <div className="contact-buttons">
+              <a href="mailto:angelo-mmacedo@hotmail.com"
+                className="main-btn-contact">
+                Contact me
+              </a>
+              <a href="https://github.com/angelom176" target="_blank" rel="noopener noreferrer" className="main-btn-contact">
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/ângelo-macedo-9585b320b" target="_blank" rel="noopener noreferrer" className="main-btn-contact">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </section>
       </main>

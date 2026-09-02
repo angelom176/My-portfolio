@@ -11,30 +11,11 @@ const projects = [
     slug: 'eventManagement',
     url: 'https://eventhub-smoky-tau.vercel.app/',
     description:
-      'A full stack application to manage events, users, and registrations with authencation and admin dashboard',
+      "Full stack event management platform with JWT authentication, role-based admin dashboard, and MySQL-backed registration system handling CRUD operations for events and attendees.",
     image: '/imagens/eventSystem.png',
     tags: ['React', 'Node.js', 'MySQL'],
   },
-  /*
-  {
-    type: 'Educational Platform',
-    title: 'Punch 2 Learn - Educational Platform',
-    slug: 'punch2learn',
-    description:
-      'An educational platform designed to make learning fun and interactive through engaging activities and gamification elements.',
-    image: '/imagens/punch2learn.png',
-    tags: ['HTML', 'CSS', 'UI'],
-  },
   
-  {
-    type: 'Java',
-    title: 'Fireboy and Watergirl',
-    slug: 'fireboyAndWatergirl',
-    description:
-      'A 2D game project inspired by Fireboy and Watergirl, developed to explore game mechanics, interaction design and JavaScript programming.',
-    image: '/imagens/game.jpg',
-    tags: ['JavaScript', 'Game Logic', '2D'],
-  },*/
   {
     type: 'Java',
     title: 'Wild West Card Game',
@@ -76,27 +57,26 @@ export default function ProjectsPage() {
 
                       <div className="main-project-content">
 
-                    <p className="main-project-type">{project.type}</p>
+                        <p className="main-project-type">{project.type}</p>
 
-                    <h3>{project.title}</h3>
+                        <h3>{project.title}</h3>
 
-                    <p>{project.description}</p>
+                        <p>{project.description}</p>
 
-                    <div className="main-tags">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="main-tag">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                      <div className="main-tags">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="main-tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
 
-                    <Link
-                      href={project.url ?? `/projects/${project.slug}`}
-                      target={project.url ? '_blank' : 'undefined'}
-                      className="main-project-link"
-                    >
-                      View project
-                    </Link>
+                      <Link
+                        href={project.url ?? `/projects/${project.slug}`}
+                        target={project.url ? '_blank' : 'undefined'}
+                        className="main-project-link">
+                        View project
+                      </Link>
                     </div>
                   </article>
              
